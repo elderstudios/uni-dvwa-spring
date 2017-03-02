@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Super Insecure Website!</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css"></link>
+</head>
+<body>
+<div class="row" id="content">
+    <div class="medium-12 columns">
+        <div class="blog-post">
+            <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Sign Out"/>
+            </form>
+            <h3>Awesome Secure Website!</h3>
+            <p>02/03/2017</p>
+            <img class="thumbnail"
+                 src="https://static.spiceworks.com/shared/post/0003/6524/IMG_ThePush_2014-0505_SecureAllTheThings.jpg"></img>
+
+            <p>Super secret blog post about secure web applications!</p>
+
+            <div class="callout">
+                <ul class="menu simple">
+                    <li><a href="#">Author: Rick Whalley</a></li>
+                    <li><a href="#">Comments: 0</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
+<script>
+    $(document).foundation();
+</script>
+</body>
+</html>

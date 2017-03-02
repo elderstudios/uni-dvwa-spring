@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head></head>
+<body>
+<table class="table table-bordered responsive">
+    <thead>
+    <tr>
+        <th>User ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Bank Balance</th>
+        <th>Admin note</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="userinfo : ${userInfoList}">
+        <td th:text="${userinfo.id}"></td>
+        <td th:text="${userinfo.username}"></td>
+        <td th:text="${userinfo.email}"></td>
+        <td th:text="${userinfo.bankBalance}"></td>
+        <td th:text="${userinfo.adminNote}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
