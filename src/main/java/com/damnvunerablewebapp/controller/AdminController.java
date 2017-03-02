@@ -4,8 +4,6 @@ import com.damnvunerablewebapp.domain.UserInfo;
 import com.damnvunerablewebapp.domain.UserInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,16 +25,16 @@ public class AdminController {
         return "view/user";
     }
 
-    @RequestMapping("user/view")
-    public String view(Model model){
-
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String username = auth.getName();
-
-        model.addAttribute("userInfo", userInfoRepository.findOneByUsername(username));
-
-        return "view/user";
-    }
+//    @RequestMapping("user/view")
+//    public String view(Model model){
+//
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//        String username = auth.getName();
+//
+//        model.addAttribute("userInfo", userInfoRepository.findOneByUsername(username));
+//
+//        return "view/user";
+//    }
 
     @Secured("ROLE_ADMIN")
     @RequestMapping("admin/user/view")
