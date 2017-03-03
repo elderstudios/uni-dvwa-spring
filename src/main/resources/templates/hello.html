@@ -5,12 +5,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css"></link>
 </head>
 <body>
-<div class="row" id="content">
+<div class="row">
     <div class="medium-12 columns">
         <div class="blog-post">
             <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
             <form th:action="@{/logout}" method="post">
-                <input type="submit" value="Sign Out"/>
+                <input class="button" type="submit" value="Sign Out"/>
             </form>
             <h3>Awesome Secure Website!</h3>
             <p>02/03/2017</p>
@@ -21,8 +21,7 @@
 
             <div class="callout">
                 <ul class="menu simple">
-                    <li><a href="#">Author: Rick Whalley</a></li>
-                    <li><a href="#">Comments: 0</a></li>
+                    <li><a href="/admin/user/view">Not so hidden secure admin link</a></li>
                 </ul>
             </div>
         </div>
