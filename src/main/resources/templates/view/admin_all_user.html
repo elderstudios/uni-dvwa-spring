@@ -15,7 +15,7 @@
     </thead>
     <tbody>
     <tr th:each="userinfo : ${userInfoList}">
-        <td th:text="${userinfo.id}"></td>
+        <td><a th:text="${userinfo.id}" th:href="${'/admin/user/view/' + userinfo.id}"></a> </td>
         <td th:text="${userinfo.username}"></td>
         <td th:text="${userinfo.email}"></td>
         <td th:text="${userinfo.bankBalance}"></td>
