@@ -5,6 +5,7 @@
         <link rel="stylesheet" th:href="@{/public/plugins/font-awesome/css/font-awesome.min.css}" />
         <link rel="stylesheet" th:href="@{/public/plugins/simple-line-icons/simple-line-icons.min.css}" />
         <link rel="stylesheet" th:href="@{/public/plugins/bootstrap/css/bootstrap.min.css}" />
+        <link rel="stylesheet" th:href="@{/public/css/components.min.css}" />
         <link rel="stylesheet" th:href="@{/public/layout/css/layout.min.css}" />
         <link rel="stylesheet" th:href="@{/public/layout/css/themes/darkblue.min.css}" />
         <link rel="stylesheet" th:href="@{/public/layout/css/custom.min.css}" />
@@ -15,8 +16,8 @@
             <div class="page-header navbar navbar-fixed-top">
                 <div class="page-header-inner ">
                     <div class="page-logo">
-                        <a href="index.html">
-                            <img src="../assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" /> </a>
+                        <a href="#">
+                            <img th:src="@{/public/img/logo.png}" alt="logo" class="logo-default" /> </a>
                         <div class="menu-toggler sidebar-toggler">
                             <span></span>
                         </div>
@@ -24,6 +25,16 @@
                     <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
                         <span></span>
                     </a>
+                </div>
+                <div class="page-toolbar">
+                    <div class="btn-group pull-right">
+                        <form th:action="@{/logout}" method="post">
+                            <button class="btn btn-transparent red btn-outline btn-circle btn-sm" type="submit" style="margin-top: 10px;">
+                                <i class="icon-logout"></i> Sign Out
+                            </button>
+                        </form>
+                        
+                    </div>
                 </div>
             </div>
             <div class="clearfix"> </div>
@@ -37,18 +48,15 @@
                                 </div>
                             </li>
                             <li class="nav-item start ">
-                                <a th:href="@{/login?logout}" class="nav-link ">
-                                    <i class="icon-user"></i>
-                                    <span class="title">User</span>
+                                <a th:href="@{/hello}" class="nav-link ">
+                                    <i class="icon-home"></i>
+                                    <span class="title">Dashboard</span>
                                 </a>
                             </li>
-                            <li class="heading">
-                                <h3 class="uppercase">Features</h3>
-                            </li>
                             <li class="nav-item start ">
-                                <a th:href="@{/login?logout}" class="nav-link ">
-                                    <i class="icon-key"></i>
-                                    <span class="title">Logout</span>
+                                <a th:href="@{/admin/user/view}" class="nav-link ">
+                                    <i class="icon-user"></i>
+                                    <span class="title">User</span>
                                 </a>
                             </li>
                             
@@ -65,9 +73,13 @@
                                 </li>
                                 
                             </ul>
+                            
                         </div>
-                        <div class="note note-info">
-                            <p> A black page template with a minimal dependency assets to use as a base for any custom page you create </p>
+                        <h1 class="page-title">Home
+                            <small th:inline="text">Home dasboard [[${#httpServletRequest.remoteUser}]] </small>
+                        </h1>
+                        <div class="coo-md-12" style="text-align: center;">  
+                            <h1> WELCOME </h1>
                         </div>
                     </div>
                 </div>
