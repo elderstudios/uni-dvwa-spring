@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
@@ -17,6 +18,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/", "/home").permitAll()
+                .antMatchers( "/public/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -42,6 +44,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .withUser("admin1").password("admin1").roles("ADMIN")
                 .and()
-                .withUser("admin2").password("admin2").roles("ADMIN");
+                .withUser("admin2").password("admin2").roles("ADMIN")
+                .and()
+                .withUser("user3").password("user3").roles("USER");
     }
+
+    // @Override
+    // public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    //   if (!registry.hasMappingForPattern("/assets/**")) {
+    //      registry.addResourceHandler("/assets/**").addResourceLocations("classpath:/assets/");
+    //   }
+    // }
 }

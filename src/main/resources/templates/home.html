@@ -2,11 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <title>Super Insecure Website!</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css"></link>
+    <link rel="stylesheet" th:href="@{/public/plugins/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/public/css/components.min.css}" />
+    <link rel="stylesheet" th:href="@{/public/pages/css/login.min.css}" />
 </head>
-<body>
-<h1>Welcome!</h1>
-
-<p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+<body class="login">
+	<div class="content" style="margin-top:auto; margin-bottom:auto;">
+		<h3 class="form-title font-green">Welcome!</h3>
+		<p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+	</div>
 </body>
 </html>

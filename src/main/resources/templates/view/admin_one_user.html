@@ -1,7 +1,7 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Super Insecure Website!</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css"></link>
+    <link rel="stylesheet" th:href="@{/public/css/style.css}" />
 </head><body>
 
 <h1>User: <span th:text="${userInfo.username}">username</span></h1>

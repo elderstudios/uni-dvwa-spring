@@ -1,27 +1,32 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Super Insecure Website!</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css"></link>
-</head><body>
-<table class="table table-bordered responsive">
-    <thead>
-    <tr>
-        <th>User ID</th>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Bank Balance</th>
-        <th>Admin note</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="userinfo : ${userInfoList}">
-        <td><a th:text="${userinfo.id}" th:href="${'/admin/user/view/' + userinfo.id}"></a> </td>
-        <td th:text="${userinfo.username}"></td>
-        <td th:text="${userinfo.email}"></td>
-        <td th:text="${userinfo.bankBalance}"></td>
-        <td th:text="${userinfo.adminNote}"></td>
-    </tr>
-    </tbody>
-</table>
+    <link rel="stylesheet" th:href="@{/public/plugins/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/public/css/components.min.css}" />
+    <link rel="stylesheet" th:href="@{/public/pages/css/login.min.css}" />
+</head>
+<body>
+    <div class="col-md-12">
+        <table class="table table-bordered responsive">
+            <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Bank Balance</th>
+                <th>Admin note</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="userinfo : ${userInfoList}">
+                <td><a th:text="${userinfo.id}" th:href="${'/admin/user/view/' + userinfo.id}"></a></td>
+                <td th:text="${userinfo.username}"></td>
+                <td th:text="${userinfo.email}"></td>
+                <td th:text="${userinfo.bankBalance}"></td>
+                <td th:text="${userinfo.adminNote}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>                                
 </body>
 </html>
