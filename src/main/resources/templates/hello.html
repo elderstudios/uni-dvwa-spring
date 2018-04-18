@@ -1,36 +1,87 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Super Insecure Website!</title>
-    <link rel="stylesheet" th:href="@{/public/css/style.css}" />
-</head>
-<body>
-<div class="row">
-    <div class="medium-12 columns">
-        <div class="blog-post">
-            <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-            <form th:action="@{/logout}" method="post">
-                <input class="button" type="submit" value="Sign Out"/>
-            </form>
-            <h3>Awesome Secure Website!</h3>
-            <p>02/03/2017</p>
-            <img class="thumbnail"
-                 src="https://static.spiceworks.com/shared/post/0003/6524/IMG_ThePush_2014-0505_SecureAllTheThings.jpg"></img>
-
-            <p>Super secret blog post about secure web applications!</p>
-
-            <div class="callout">
-                <ul class="menu simple">
-                    <li><a href="/admin/user/view">Not so hidden secure admin link</a></li>
-                </ul>
+<html lang="en">
+    <head>
+        <title>Metronic | Blank Page Layout</title>
+        <link rel="stylesheet" th:href="@{/public/plugins/font-awesome/css/font-awesome.min.css}" />
+        <link rel="stylesheet" th:href="@{/public/plugins/simple-line-icons/simple-line-icons.min.css}" />
+        <link rel="stylesheet" th:href="@{/public/plugins/bootstrap/css/bootstrap.min.css}" />
+        <link rel="stylesheet" th:href="@{/public/layout/css/layout.min.css}" />
+        <link rel="stylesheet" th:href="@{/public/layout/css/themes/darkblue.min.css}" />
+        <link rel="stylesheet" th:href="@{/public/layout/css/custom.min.css}" />
+        <link rel="shortcut icon" href="favicon.ico" /> 
+    </head>
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+        <div class="page-wrapper">
+            <div class="page-header navbar navbar-fixed-top">
+                <div class="page-header-inner ">
+                    <div class="page-logo">
+                        <a href="index.html">
+                            <img src="../assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" /> </a>
+                        <div class="menu-toggler sidebar-toggler">
+                            <span></span>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+            <div class="page-container">
+                <div class="page-sidebar-wrapper">
+                    <div class="page-sidebar navbar-collapse collapse">
+                        <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                            <li class="sidebar-toggler-wrapper hide">
+                                <div class="sidebar-toggler">
+                                    <span></span>
+                                </div>
+                            </li>
+                            <li class="nav-item start ">
+                                <a th:href="@{/login?logout}" class="nav-link ">
+                                    <i class="icon-user"></i>
+                                    <span class="title">User</span>
+                                </a>
+                            </li>
+                            <li class="heading">
+                                <h3 class="uppercase">Features</h3>
+                            </li>
+                            <li class="nav-item start ">
+                                <a th:href="@{/login?logout}" class="nav-link ">
+                                    <i class="icon-key"></i>
+                                    <span class="title">Logout</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="page-content-wrapper">
+                    <div class="page-content">
+                        <div class="page-bar">
+                            <ul class="page-breadcrumb">
+                                <li>
+                                    <a href="#">Home</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="note note-info">
+                            <p> A black page template with a minimal dependency assets to use as a base for any custom page you create </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-footer">
+                <div class="page-footer-inner"> 2016 &copy; Metronic Theme By</div>
+                <div class="scroll-to-top">
+                    <i class="icon-arrow-up"></i>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
-<script>
-    $(document).foundation();
-</script>
-</body>
+        <script type="text/javascript" th:src="@{/public/plugins/js/jquery.min.js}" />
+        <script type="text/javascript" th:src="@{/public/plugins/bootstrap/js/bootstrap.min.js}" />
+        <script type="text/javascript" th:src="@{/public/plugins/js/app.min.js}" />
+        <script type="text/javascript" th:src="@{/public/layout/scripts/layout.min.js}" />
+    </body>
 </html>

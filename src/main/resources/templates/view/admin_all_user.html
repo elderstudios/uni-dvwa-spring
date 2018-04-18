@@ -6,27 +6,43 @@
     <link rel="stylesheet" th:href="@{/public/pages/css/login.min.css}" />
 </head>
 <body>
-    <div class="col-md-12">
-        <table class="table table-bordered responsive">
-            <thead>
-            <tr>
-                <th>User ID</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Bank Balance</th>
-                <th>Admin note</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="userinfo : ${userInfoList}">
-                <td><a th:text="${userinfo.id}" th:href="${'/admin/user/view/' + userinfo.id}"></a></td>
-                <td th:text="${userinfo.username}"></td>
-                <td th:text="${userinfo.email}"></td>
-                <td th:text="${userinfo.bankBalance}"></td>
-                <td th:text="${userinfo.adminNote}"></td>
-            </tr>
-            </tbody>
+<table width="100%" border="0">
+  <tr>
+    <td width="10%" valign="top">
+        <table width="200" border="1">
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
         </table>
-    </div>                                
+    </td>
+    
+    <td width="90%">
+    	<div class="col-md-12">
+            <table class="table table-bordered responsive">
+                <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Bank Balance</th>
+                    <th>Admin note</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="userinfo : ${userInfoList}">
+                    <td><a th:text="${userinfo.id}" th:href="${'/admin/user/view/' + userinfo.id}"></a></td>
+                    <td th:text="${userinfo.username}"></td>
+                    <td th:text="${userinfo.email}"></td>
+                    <td th:text="${userinfo.bankBalance}"></td>
+                    <td th:text="${userinfo.adminNote}"></td>
+                </tr>
+                </tbody>
+          </table>
+        </div>
+    </td>
+  </tr>
+</table>
+                                    
 </body>
 </html>
