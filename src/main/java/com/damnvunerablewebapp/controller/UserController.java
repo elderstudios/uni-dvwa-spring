@@ -20,11 +20,11 @@ public class UserController {
     private UserInfoRepository userInfoRepository;
     /*
     @RequestMapping("user/get/{id}")
-    public String view(@PathVariable("id") int id, Model model){
+    public String view(@PathVariable("id") int id, string model){
         //model.addAttribute("userInfo", userInfoRepository.findOne(id));
-        return userInfoRepository.findOne(id);
+        return this.userInfoRepository.findOne(id);
     }
-    */
+
     /*
     
 
@@ -34,7 +34,7 @@ public class UserController {
         return "view/user";
     }
 
-    
+  
 
 //    @RequestMapping("user/view")
 //    public String view(Model model){
