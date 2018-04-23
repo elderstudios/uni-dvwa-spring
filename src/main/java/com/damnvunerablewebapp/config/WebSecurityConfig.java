@@ -12,17 +12,22 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    CustomizeAuthenticationSuccessHandler customizeAuthenticationSuccessHandler;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/home").permitAll()
-                .antMatchers( "/public/**").permitAll()
-                .anyRequest().authenticated()
+                    .antMatchers( "/public/**").permitAll()
+                    .antMatchers("/", "/home").permitAll()
+                    .antMatchers("/admin").hasRole("ADMIN")
+                    .anyRequest().authenticated()
                 .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll()
+                .formLogin().successHandler(customizeAuthenticationSuccessHandler)
+                    .loginPage("/login")
+                    .permitAll()
                 .and()
                 .logout()
                 .permitAll()
@@ -35,6 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        
         auth
                 .inMemoryAuthentication()
                 .withUser("user1").password("user1").roles("USER")
@@ -47,11 +53,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .withUser("user3").password("user3").roles("USER");
     }
-
-    // @Override
-    // public void addResourceHandlers(ResourceHandlerRegistry registry) {
-    //   if (!registry.hasMappingForPattern("/assets/**")) {
-    //      registry.addResourceHandler("/assets/**").addResourceLocations("classpath:/assets/");
-    //   }
-    // }
 }

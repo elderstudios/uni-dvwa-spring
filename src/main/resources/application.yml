@@ -14,3 +14,4 @@ spring:
     console:
       enabled: true
       path: /console
+  #spring.autoconfigure.exclude: org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration

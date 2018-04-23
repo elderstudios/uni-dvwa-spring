@@ -1,67 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Metronic | Blank Page Layout</title>
-        <link rel="stylesheet" th:href="@{/public/plugins/font-awesome/css/font-awesome.min.css}" />
-        <link rel="stylesheet" th:href="@{/public/plugins/simple-line-icons/simple-line-icons.min.css}" />
-        <link rel="stylesheet" th:href="@{/public/plugins/bootstrap/css/bootstrap.min.css}" />
-        <link rel="stylesheet" th:href="@{/public/css/components.min.css}" />
-        <link rel="stylesheet" th:href="@{/public/layout/css/layout.min.css}" />
-        <link rel="stylesheet" th:href="@{/public/layout/css/themes/darkblue.min.css}" />
-        <link rel="stylesheet" th:href="@{/public/layout/css/custom.min.css}" />
-        <link rel="shortcut icon" href="favicon.ico" /> 
+        <!--/*/<th:block th:include="fragments/header :: head"/>/*/-->
     </head>
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
         <div class="page-wrapper">
             <div class="page-header navbar navbar-fixed-top">
-                <div class="page-header-inner ">
-                    <div class="page-logo">
-                        <a href="#">
-                            <img th:src="@{/public/img/logo.png}" alt="logo" class="logo-default" /> </a>
-                        <div class="menu-toggler sidebar-toggler">
-                            <span></span>
-                        </div>
-                    </div>
-                    <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span></span>
-                    </a>
-                </div>
-                <div class="page-toolbar">
-                    <div class="btn-group pull-right">
-                        <form th:action="@{/logout}" method="post">
-                            <button class="btn btn-transparent red btn-outline btn-circle btn-sm" type="submit" style="margin-top: 10px;">
-                                <i class="icon-logout"></i> Sign Out
-                            </button>
-                        </form>
-                        
-                    </div>
-                </div>
+                <!--/*/<th:block th:include="fragments/header :: header"/>/*/-->
             </div>
             <div class="clearfix"> </div>
             <div class="page-container">
                 <div class="page-sidebar-wrapper">
-                    <div class="page-sidebar navbar-collapse collapse">
-                        <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
-                            <li class="sidebar-toggler-wrapper hide">
-                                <div class="sidebar-toggler">
-                                    <span></span>
-                                </div>
-                            </li>
-                            <li class="nav-item start ">
-                                <a th:href="@{/hello}" class="nav-link ">
-                                    <i class="icon-home"></i>
-                                    <span class="title">Dashboard</span>
-                                </a>
-                            </li>
-                            <li class="nav-item start ">
-                                <a th:href="@{/admin/user/view}" class="nav-link ">
-                                    <i class="icon-user"></i>
-                                    <span class="title">User</span>
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </div>
+                    <!--/*/<th:block th:include="fragments/header :: menu"/>/*/-->
                 </div>
                 <div class="page-content-wrapper">
                     <div class="page-content">
@@ -71,15 +21,20 @@
                                     <a href="#">Home</a>
                                     <i class="fa fa-circle"></i>
                                 </li>
+                                <li>
+                                    <a href="#">Users</a>
+                                </li>
                                 
                             </ul>
-                            
+                            <div class="page-toolbar">
+                                <!--/*/<th:block th:include="fragments/header :: search"/>/*/-->
+                            </div>
                         </div>
-                        <h1 class="page-title">Home
-                            <small th:inline="text">Home dasboard [[${#httpServletRequest.remoteUser}]] </small>
-                        </h1>
-                        <div class="coo-md-12" style="text-align: center;">  
-                            <h1> WELCOME </h1>
+                        <div class="coo-md-12" style="text-align: center;">
+                            <h1 th:inline="text">WELCOME Back [[${#httpServletRequest.remoteUser}]] 
+                                <br/>
+                                your ID is [[${#httpServletRequest.remoteName}]]
+                            </h1>
                         </div>
                     </div>
                 </div>

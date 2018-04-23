@@ -25,4 +25,14 @@ public class HomeController {
     public String hello(){
         return "hello";
     }
+
+    @RequestMapping("user")
+    public String user(){
+        return "home_user";
+    }
+
+    @RequestMapping("admin")
+    public String admin(){
+        return "home_admin";
+    }
 }

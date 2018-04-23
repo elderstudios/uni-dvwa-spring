@@ -1,69 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Metronic | Blank Page Layout</title>
-        <link rel="stylesheet" th:href="@{/public/plugins/font-awesome/css/font-awesome.min.css}" />
-        <link rel="stylesheet" th:href="@{/public/plugins/simple-line-icons/simple-line-icons.min.css}" />
-        <link rel="stylesheet" th:href="@{/public/plugins/bootstrap/css/bootstrap.min.css}" />
-        <link rel="stylesheet" th:href="@{/public/css/components.min.css}" />
-        <link rel="stylesheet" th:href="@{/public/pages/css/profile.min.css}" />
-
-        <link rel="stylesheet" th:href="@{/public/layout/css/layout.min.css}" />
-        <link rel="stylesheet" th:href="@{/public/layout/css/themes/darkblue.min.css}" />
-        <link rel="stylesheet" th:href="@{/public/layout/css/custom.min.css}" />
-        <link rel="shortcut icon" href="favicon.ico" /> 
+        <!--/*/<th:block th:include="fragments/header :: head"/>/*/-->
     </head>
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
         <div class="page-wrapper">
             <div class="page-header navbar navbar-fixed-top">
-                <div class="page-header-inner ">
-                    <div class="page-logo">
-                        <a href="index.html">
-                            <img th:src="@{/public/img/logo.png}" alt="logo" class="logo-default" /> </a>
-                        <div class="menu-toggler sidebar-toggler">
-                            <span></span>
-                        </div>
-                    </div>
-                    <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span></span>
-                    </a>
-                </div>
-                <div class="page-toolbar">
-                    <div class="btn-group pull-right">
-                        <form th:action="@{/logout}" method="post">
-                            <button class="btn btn-transparent red btn-outline btn-circle btn-sm" type="submit" style="margin-top: 10px;">
-                                <i class="icon-logout"></i> Sign Out
-                            </button>
-                        </form>
-                        
-                    </div>
-                </div>
+                <!--/*/<th:block th:include="fragments/header :: header"/>/*/-->
             </div>
             <div class="clearfix"> </div>
             <div class="page-container">
                 <div class="page-sidebar-wrapper">
-                    <div class="page-sidebar navbar-collapse collapse">
-                        <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
-                            <li class="sidebar-toggler-wrapper hide">
-                                <div class="sidebar-toggler">
-                                    <span></span>
-                                </div>
-                            </li>
-                            <li class="nav-item start ">
-                                <a th:href="@{/hello}" class="nav-link ">
-                                    <i class="icon-home"></i>
-                                    <span class="title">Dashboard</span>
-                                </a>
-                            </li>
-                            <li class="nav-item start ">
-                                <a th:href="@{/admin/user/view}" class="nav-link ">
-                                    <i class="icon-user"></i>
-                                    <span class="title">User</span>
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </div>
+                    <!--/*/<th:block th:include="fragments/header :: menu"/>/*/-->
                 </div>
                 <div class="page-content-wrapper">
                     <div class="page-content">
@@ -74,107 +22,98 @@
                                     <i class="fa fa-circle"></i>
                                 </li>
                                 <li>
-                                    <a th:href="@{/admin/user/view}">Users</a>
-                                    <i class="fa fa-circle"></i>
-                                </li>
-                                <li>
-                                    <a href="#">Profile</a>
+                                    <a href="#">Users</a>
                                 </li>
                                 
                             </ul>
+                            <div class="page-toolbar">
+                                <!--/*/<th:block th:include="fragments/header :: search"/>/*/-->
+                            </div>
                         </div>
-                        <!-- BEGIN PAGE TITLE-->
-						<h1 class="page-title">User Profile
-						    <small>user profile detail</small>
-						</h1>
-						<!-- END PAGE TITLE-->
-						<!-- END PAGE HEADER-->
-						<div class="row">
-						    <div class="col-md-12">
-						        <!-- BEGIN PROFILE SIDEBAR -->
-						        <div class="profile-sidebar">
-						            <!-- PORTLET MAIN -->
-						            <div class="portlet light profile-sidebar-portlet ">
-						                <!-- SIDEBAR USERPIC -->
-						                <div class="profile-userpic">
-						                    <img th:src="${'/public/img/avatars/team'+ userInfo.id +'.jpg'}" class="img-responsive" alt="" /> </div>
-						                <!-- END SIDEBAR USERPIC -->
-						                <!-- SIDEBAR USER TITLE -->
-						                <div class="profile-usertitle">
-						                    <div class="profile-usertitle-name" th:text="${userInfo.name}"></div>
-						                    <div class="profile-usertitle-job" th:text="${userInfo.level}"></div>
-						                </div>
-						                <!-- END SIDEBAR USER TITLE -->
-						                <!-- SIDEBAR BUTTONS -->
-						                <div class="profile-userbuttons">
-						                    <button type="button" class="btn btn-circle green btn-sm">Follow</button>
-						                    <button type="button" class="btn btn-circle red btn-sm">Message</button>
-						                </div>
-						                <!-- END SIDEBAR BUTTONS -->
-						                <!-- SIDEBAR MENU -->
-						                <div class="profile-usermenu">
-						                    <ul class="nav">
-						                        <li>
-						                            <a href="#">
-						                                <i class="icon-home"></i> Overview </a>
-						                        </li>
-						                        <li class="active">
-						                            <a href="#">
-						                                <i class="icon-settings"></i> Account Settings </a>
-						                        </li>
-						                        <li>
-						                            <a href="#">
-						                                <i class="icon-info"></i> Help </a>
-						                        </li>
-						                    </ul>
-						                </div>
-						                <!-- END MENU -->
-						            </div>
-						            <!-- END PORTLET MAIN -->
-						        </div>
-						        <!-- END BEGIN PROFILE SIDEBAR -->
-						        <!-- BEGIN PROFILE CONTENT -->
-						        <div class="profile-content">
-						            <div class="row">
-						                <div class="col-md-12">
-						                    <div class="portlet light ">
-						                        <div class="portlet-title tabbable-line">
-						                            <div class="caption caption-md">
-						                                <i class="icon-globe theme-font hide"></i>
-						                                <span class="caption-subject font-blue-madison bold uppercase">Profile Account</span>
-						                            </div>
-						                            
-						                        </div>
-						                        <div class="portlet-body">
-						                            <div class="tab-content">
-						                                <form role="form" action="#">
-						                                    <div class="form-group">
-						                                        <label class="control-label">User Name</label>
-						                                        <input type="text" class="form-control" th:field="${userInfo.name}" /> </div>
-						                                    <div class="form-group">
-						                                        <label class="control-label">Email</label>
-						                                        <input type="text" class="form-control" th:field="${userInfo.email}" /> </div>
-						                                    <div class="form-group">
-						                                        <label class="control-label">Bank Balance</label>
-						                                        <input type="text" class="form-control" th:field="${userInfo.bankBalance}" /> </div>
-						                                    <div class="form-group">
-						                                        <label class="control-label">Admin Note</label>
-						                                        <input type="text" class="form-control" th:field="${userInfo.adminNote}" /> </div>
-						                               
-						                                    <div class="margiv-top-10">
-						                                        <a href="javascript:;" class="btn green"> Save Changes </a>
-						                                        <a href="javascript:;" class="btn default"> Cancel </a>
-						                                    </div>
-						                                </form>
-						                            </div>
-						                        </div>
-						                    </div>
-						                </div>
-						            </div>
-						        </div>
-						        <!-- END PROFILE CONTENT -->
-						    </div>
-						</div>
+                        <div class="col-md-12">
+                            <!-- BEGIN PROFILE SIDEBAR -->
+                            <div class="profile-sidebar">
+                                <!-- PORTLET MAIN -->
+                                <div class="portlet light profile-sidebar-portlet ">
+                                    <!-- SIDEBAR USERPIC -->
+                                    <div class="profile-userpic">
+                                        <img th:src="${'/public/img/avatars/team'+ userInfo.id +'.jpg'}" class="img-responsive" alt="" /> </div>
+                                    <!-- END SIDEBAR USERPIC -->
+                                    <!-- SIDEBAR USER TITLE -->
+                                    <div class="profile-usertitle">
+                                        <div class="profile-usertitle-name" th:text="${userInfo.name}"></div>
+                                        <div class="profile-usertitle-job" th:text="${userInfo.level}"></div>
+                                    </div>
+                                    <!-- END SIDEBAR USER TITLE -->
+                                    <!-- SIDEBAR BUTTONS -->
+                                    <div class="profile-userbuttons">
+                                        <button type="button" class="btn btn-circle green btn-sm">Follow</button>
+                                        <button type="button" class="btn btn-circle red btn-sm">Message</button>
+                                    </div>
+                                    <!-- END SIDEBAR BUTTONS -->
+                                    <!-- SIDEBAR MENU -->
+                                    <div class="profile-usermenu">
+                                        <ul class="nav">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="icon-home"></i> Overview </a>
+                                            </li>
+                                            <li class="active">
+                                                <a href="#">
+                                                    <i class="icon-settings"></i> Account Settings </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="icon-info"></i> Help </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- END MENU -->
+                                </div>
+                                <!-- END PORTLET MAIN -->
+                            </div>
+                            <!-- END BEGIN PROFILE SIDEBAR -->
+                            <!-- BEGIN PROFILE CONTENT -->
+                            <div class="profile-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="portlet light ">
+                                            <div class="portlet-title tabbable-line">
+                                                <div class="caption caption-md">
+                                                    <i class="icon-globe theme-font hide"></i>
+                                                    <span class="caption-subject font-blue-madison bold uppercase">Profile Account</span>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="tab-content">
+                                                    <form role="form" th:action="@{/user/save}" method="POST">
+                                                        <div class="form-group">
+                                                            <label class="control-label">User Name</label>
+                                                            <input type="text" class="form-control" th:field="${userInfo.name}" /> </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">Email</label>
+                                                            <input type="text" class="form-control" th:field="${userInfo.email}" /> </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">Bank Balance</label>
+                                                            <input type="text" class="form-control" th:field="${userInfo.bankBalance}" /> </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">Admin Note</label>
+                                                            <input type="text" class="form-control" th:field="${userInfo.adminNote}" /> </div>
+                                                   
+                                                        <div class="margiv-top-10">
+                                                            <a href="javascript:;" class="btn green"> Save Changes </a>
+                                                            <a href="javascript:;" class="btn default"> Cancel </a>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END PROFILE CONTENT -->
+                        </div>
                     </div>
                 </div>
             </div>
