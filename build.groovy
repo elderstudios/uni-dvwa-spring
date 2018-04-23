@@ -25,3 +25,4 @@ node {
 	stage('Postman Nemwan'){
 		sh ("echo Spotbugs")
 	}
+}
