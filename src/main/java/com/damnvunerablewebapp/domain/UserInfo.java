@@ -24,4 +24,12 @@ public class UserInfo {
     private String bankBalance;
     private String adminNote;
 
+    public Integer getId() {
+        return this.id;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
 }

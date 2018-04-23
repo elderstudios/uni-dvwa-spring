@@ -1,25 +1,17 @@
 package com.damnvunerablewebapp.controller;
 
-import java.util.List;
-import java.util.Map;
-
-import com.damnvunerablewebapp.domain.UserInfo;
-import com.damnvunerablewebapp.domain.UserInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import com.damnvunerablewebapp.domain.UserInfo;
+import com.damnvunerablewebapp.domain.UserInfoRepository;
+
+import java.security.MessageDigest;
 
 /**
  * Created by rickwhalley on 02/03/2017.
@@ -57,7 +49,8 @@ public class UserController {
 
         model.addAttribute("userInfo", userInfo);
 
-        System.out.println(userInfo);
+        System.out.println(userInfo.getId());
+        //System.out.println(userInfo.getLevel());
 
         return "view/user";
     }

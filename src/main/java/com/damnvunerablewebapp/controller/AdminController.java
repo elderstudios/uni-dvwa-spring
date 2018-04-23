@@ -57,11 +57,11 @@ public class AdminController {
     public String admin_view_all(Model model){
         model.addAttribute("userInfoList", userInfoRepository.findAll());
         for(UserInfo userInfo :userInfoRepository.findAll()){
-            System.out.println(userInfo.getUsername());
+            //System.out.println(userInfo.getUsername());
         }
         return "view/admin_all_user";
     }
-
+    @Secured("ROLE_ADMIN")
     @RequestMapping("admin/user/view/{id}")
     public String admin_view_one(@PathVariable("id") int id, Model model){
         model.addAttribute("userInfo", userInfoRepository.findOne(id));
