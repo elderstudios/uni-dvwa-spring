@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.1.xsd">
+<suppress>
+  <notes><![CDATA[
+    This suppresses all CVE entries that have a score below CVSS 7.
+  ]]></notes>
+  <cvssBelow>2</cvssBelow>
+</suppress>
+<!-- <suppress>
+   <notes><![CDATA[
+     CWE: CWE-264 Permissions, Privileges, and Access Controls
+     file name: all *.jar
+   ]]></notes>
+   <cve>CVE-2016-5425</cve>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+     CWE: CWE-264 Permissions, Privileges, and Access Controls
+     file name: all *.jar
+   ]]></notes>
+   <cve>CVE-2016-6325</cve>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: realtime-payment.jar: tomcat-annotations-api-9.0.6.jar
+   ]]></notes>
+   <sha1>cfc6c47b72ca77a0a647ae0c49403f72436011df</sha1>
+   <cve>CVE-2009-3548</cve>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: realtime-payment.jar: tomcat-annotations-api-9.0.6.jar
+   ]]></notes>
+   <sha1>cfc6c47b72ca77a0a647ae0c49403f72436011df</sha1>
+   <cve>CVE-2013-2185</cve>
+</suppress> -->
+</suppressions>
