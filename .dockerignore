@@ -2,4 +2,4 @@
 *
 
 # include some
-!www-0.0.1-SNAPSHOT.jar
+!target/www-0.0.1-SNAPSHOT.jar
