@@ -61,7 +61,7 @@ public class AdminController {
         }
         return "view/admin_all_user";
     }
-    @Secured("ROLE_ADMIN")
+    
     @RequestMapping("admin/user/view/{id}")
     public String admin_view_one(@PathVariable("id") int id, Model model){
         model.addAttribute("userInfo", userInfoRepository.findOne(id));

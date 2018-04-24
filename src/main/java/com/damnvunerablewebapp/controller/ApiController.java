@@ -1,16 +1,12 @@
 package com.damnvunerablewebapp.controller;
 
-import java.util.Map;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import javax.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.damnvunerablewebapp.domain.UserInfo;
 import com.damnvunerablewebapp.domain.UserInfoRepository;
@@ -21,27 +17,45 @@ import java.security.MessageDigest;
  * Created by rickwhalley on 02/03/2017.
  */
 
-@Controller
-public class UserController {
+@RestController
+@RequestMapping(value = "/api")
+public class ApiController {
 
     @Autowired
     private UserInfoRepository userInfoRepository;
 
+    @RequestMapping(value = "/{id}")
+    public UserInfo getById(@PathVariable("id") int id){
+
+        UserInfo userInfo = userInfoRepository.findOne(id);
+
+        return userInfo;
+    }
+
+    @RequestMapping(value = "update/{id}", method = RequestMethod.POST)
+    public UserInfo updateUserById(@PathVariable("id") int id){
+
+        UserInfo userInfo = userInfoRepository.findOne(id);
+
+        return userInfo;
+    }
+    
+    /*
     @RequestMapping("user/view/{id}")
     public String view(@PathVariable("id") int id, Model model){
         model.addAttribute("userInfo", userInfoRepository.findOne(id));
         return "view/user";
     }
 
-    @RequestMapping(value = "/search")
-    public String getUserByName(HttpServletRequest request, Model model) {
-        System.out.println(request.getParameter("name"));
-        String nameed = request.getParameter("name");
-        UserInfo userInfo =  userInfoRepository.findOneByUsername(nameed);
+    
+    @RequestMapping(value = "/search/name/{name}")
+    public String getUserByName(@PathVariable String name, Model model) {
+        UserInfo userInfo =  userInfoRepository.findOneByUsername(name);
         model.addAttribute("userInfo", userInfo);
 
         return "view/user";
     }
+    
 
     @RequestMapping("user/view")
     public String view(Model model){

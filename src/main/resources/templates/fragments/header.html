@@ -97,10 +97,12 @@
                             <div class="page-toolbar" th:fragment="search">
                                 <div class="btn-group pull-right">
                                     <div class="input-group pull-right">
-                                        <input class="form-control" placeholder="Search for..." type="text"/>
-                                        <span class="input-group-btn">
-                                            <button class="btn red" type="button">Go!</button>
-                                        </span>
+                                        <form role="form" th:action="@{/search}" method="GET">
+                                            <input class="form-control" placeholder="Search for..." type="text" name="name" />
+                                            <span class="input-group-btn">
+                                                <button class="btn red" type="submit">Go!</button>
+                                            </span>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
