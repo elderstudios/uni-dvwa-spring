@@ -101,7 +101,7 @@
 									"key": "file",
 									"description": "",
 									"type": "file",
-									"src": "/home/reports/arachni-report.json"
+									"src": "/dvwa-spring/reports/arachni-report.json"
 								}
 							]
 						},
