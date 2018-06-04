@@ -6,3 +6,5 @@
 ! spotbugs-customExcludeFilter.xml
 ! reports
 ! postman
+! spotbugs
+! dependency-check
