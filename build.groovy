@@ -18,4 +18,11 @@ node {
 	stage('Archani Publish to dojo'){
 		sh ("docker run --rm -v `pwd`:/dvwa-spring postman/newman_ubuntu1404 run /dvwa-spring/postman/DefectDojo.postman_collection.json -e /dvwa-spring/postman/Defectdojo.postman_environment.json -k")
 	}
+	stage('Spotbugs Publish to dojo'){
+		def spotbugs = /dvwa-spring/reports/spotbugs-dvwa-spring-result.xml
+		def engagement = "/api/v1/engagements/76/"
+		sh "echo ${spotbugs}"
+		jq -r '.item[0].item[2].request.body.formdata[5].src="${spotbugs}"' postman/DefectDojo.postman_collection.json
+		sh ("docker run --rm -v `pwd`:/dvwa-spring postman/newman_ubuntu1404 run /dvwa-spring/postman/DefectDojo.postman_collection.json -e /dvwa-spring/postman/Defectdojo.postman_environment.json -k")
+	}
 }
