@@ -101,7 +101,7 @@
 									"key": "file",
 									"description": "",
 									"type": "file",
-									"src": "/home/reports/aracni-report.json"
+									"src": "/home/reports/arachni-report.json"
 								}
 							]
 						},
