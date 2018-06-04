@@ -16,6 +16,6 @@ node {
 			// dependencyCheckPublisher canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/dependency-check-report.xml', unHealthy: ''
 	}
 	stage('Publish to dojo'){
-		sh ("docker run --rm -v `pwd`:/home postman/newman_ubuntu1404 run /home/DefectDojo.postman_collection.json -e /home/Defectdojo.postman_environment.json -k")
+		sh ("docker run --rm -v `pwd`:/home postman/newman_ubuntu1404 run /home/postman/DefectDojo.postman_collection.json -e /home/postman/Defectdojo.postman_environment.json -k")
 	}
 }
