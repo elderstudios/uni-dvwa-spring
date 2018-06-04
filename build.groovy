@@ -16,16 +16,15 @@ node {
 		dependencyCheckPublisher canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/reports/dependency-check-report.xml', unHealthy: ''
 	}
 	stage('Arachni Publish to dojo'){
-	    def engagement = "/api/v1/engagements/3/"
-	    def type = "arachni"
-	    sh "jq -r '.item[0].item[2].request.body.formdata[1].value=\"${engagement}\"' postman/DefectDojo.postman_collection.json > postman/${type}.DefectDojo.postman_collection.json"
+		def engagement = "/api/v1/engagements/3/"
+		def type = "arachni"
+		sh "jq -r '.item[0].item[2].request.body.formdata[1].value=\"${engagement}\"' postman/DefectDojo.postman_collection.json > postman/${type}.DefectDojo.postman_collection.json"
 		sh ("docker run --rm -v `pwd`:/dvwa-spring postman/newman_ubuntu1404 run /dvwa-spring/postman/${type}.DefectDojo.postman_collection.json -e /dvwa-spring/postman/Defectdojo.postman_environment.json -k")
 	}
 	stage('Spotbugs Publish to dojo'){
 		def engagement = "/api/v1/engagements/1/"
-	    def type = "spotbugs"
-		sh "echo ${spotbugs}"
-		sh "jq -r '.item[0].item[2].request.body.formdata[1].value=\"${spotbugs}\"' postman/DefectDojo.postman_collection.json"
+		def type = "spotbugs"
+		sh "jq -r '.item[0].item[2].request.body.formdata[1].value=\"${engagement}\"' postman/DefectDojo.postman_collection.json > postman/${type}.DefectDojo.postman_collection.json"
 		sh ("docker run --rm -v `pwd`:/dvwa-spring postman/newman_ubuntu1404 run /dvwa-spring/postman/${type}.DefectDojo.postman_collection.json -e /dvwa-spring/postman/Defectdojo.postman_environment.json -k")
 	}
 }
