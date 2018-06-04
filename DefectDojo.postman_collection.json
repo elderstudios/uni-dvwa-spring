@@ -101,7 +101,7 @@
 									"key": "file",
 									"description": "",
 									"type": "file",
-									"src": "/Users/sandyqx/Downloads/aracni-report.json"
+									"src": "/home/resources/aracni-report.json"
 								}
 							]
 						},
