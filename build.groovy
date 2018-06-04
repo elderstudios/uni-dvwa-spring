@@ -16,6 +16,7 @@ node {
 		dependencyCheckPublisher canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/reports/dependency-check-report.xml', unHealthy: ''
 	}
 	stage('Archani Publish to dojo'){
+		def engagement = "/api/v1/engagements/1/"
 		sh ("docker run --rm -v `pwd`:/dvwa-spring postman/newman_ubuntu1404 run /dvwa-spring/postman/DefectDojo.postman_collection.json -e /dvwa-spring/postman/Defectdojo.postman_environment.json -k")
 	}
 	stage('Spotbugs Publish to dojo'){
