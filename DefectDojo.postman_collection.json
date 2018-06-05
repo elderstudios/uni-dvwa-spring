@@ -25,28 +25,6 @@
 					"response": []
 				},
 				{
-					"name": "Create New",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{api_key}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"tmodel_path\": \"\",\n  \"status\": \"In Progress\",\n  \"product\": \"/api/v1/products/1/\",\n  \"description\": \"\",\n  \"lead\": \"/api/v1/users/1/\",\n  \"check_list\": false,\n  \"name\": \"Remittance API Engagment 3\",\n  \"target_start\": \"2018-05-23\",\n  \"done_testing\": false,\n  \"risk_path\": \"\",\n  \"reason\": \"\",\n  \"version\": \"\",\n  \"api_test\": false,\n  \"pen_test\": false,\n  \"progress\": \"\",\n  \"threat_model\": false,\n  \"active\": true,\n  \"test_strategy\": \"\",\n  \"target_end\": \"2018-06-23\"\n}"
-						},
-						"url": "{{url}}/api/v1/engagements/"
-					},
-					"response": []
-				},
-				{
 					"name": "import scan",
 					"request": {
 						"method": "POST",
@@ -75,7 +53,7 @@
 								},
 								{
 									"key": "engagement",
-									"value": "/api/v1/engagements/44/",
+									"value": "{{engagements_path}}",
 									"type": "text",
 									"description": ""
 								},
