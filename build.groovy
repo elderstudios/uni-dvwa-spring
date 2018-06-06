@@ -18,15 +18,17 @@ node {
 	stage('Arachni Publish to dojo'){
 		def engagement = "/api/v1/engagements/1/"
 		def type = "arachni"
+		def scan_type = "Arachni Scan"
 		def src = "/dvwa-spring/reports/arachni-report.json"
-        sh "jq 'if .values[2].key == \"engagements_path\" then  .values[2].value=\"${engagement}\" | .values[3].value=\"${src}\"  else \"Some error\" end' postman/DefectDojo.postman_environment.json > postman/${type}.DefectDojo.postman_environment.json"
+    sh "jq 'if .values[2].key == \"engagements_path\" then  .values[2].value=\"${engagement}\" | .values[3].value=\"${src}\" | .values[4].value=\"${scan_type}\"  else \"Some error\" end' postman/DefectDojo.postman_environment.json > postman/${type}.DefectDojo.postman_environment.json"
 		sh ("docker run --rm -v `pwd`:/dvwa-spring postman/newman_ubuntu1404 run /dvwa-spring/postman/DefectDojo.postman_collection.json -e /dvwa-spring/postman/${type}.DefectDojo.postman_environment.json -k")
 	}
 	stage('Spotbugs Publish to dojo'){
 		def engagement = "/api/v1/engagements/1/"
 		def type = "arachni"
+		def scan_type = "Arachni Scan"
 		def src = "/dvwa-spring/reports/arachni-report.json"
-    sh "jq 'if .values[2].key == \"engagements_path\" then  .values[2].value=\"${engagement}\" | .values[3].value=\"${src}\"  else \"Some error\" end' postman/DefectDojo.postman_environment.json > postman/${type}.DefectDojo.postman_environment.json"
+		sh "jq 'if .values[2].key == \"engagements_path\" then  .values[2].value=\"${engagement}\" | .values[3].value=\"${src}\" | .values[4].value=\"${scan_type}\"  else \"Some error\" end' postman/DefectDojo.postman_environment.json > postman/${type}.DefectDojo.postman_environment.json"
 		sh ("docker run --rm -v `pwd`:/dvwa-spring postman/newman_ubuntu1404 run /dvwa-spring/postman/DefectDojo.postman_collection.json -e /dvwa-spring/postman/${type}.DefectDojo.postman_environment.json -k")
 	}
 }

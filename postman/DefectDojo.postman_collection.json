@@ -44,7 +44,7 @@
 								},
 								{
 									"key": "scan_type",
-									"value": "Arachni Scan",
+									"value": "{{scan_type}}",
 									"type": "text",
 									"description": ""
 								},
