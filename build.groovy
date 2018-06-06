@@ -19,16 +19,14 @@ node {
 		def engagement = "/api/v1/engagements/1/"
 		def type = "arachni"
 		def src = "/dvwa-spring/reports/arachni-report.json"
-		sh "jq -r '.values[2].value=\"${engagement}\"' postman/DefectDojo.postman_environment.json > postman/${type}.DefectDojo.postman_collection.json"
-		sh "jq -r '.item[0].item[0].request.body.formdata[5].src=\"${src}\"' postman/DefectDojo.postman_collection.json > postman/${type}.DefectDojo.postman_collection.json"
-		sh ("docker run --rm -v `pwd`:/dvwa-spring postman/newman_ubuntu1404 run /dvwa-spring/postman/${type}.DefectDojo.postman_collection.json -e /dvwa-spring/postman/DefectDojo.postman_environment.json -k")
+        sh "jq 'if .values[2].key == \"engagements_path\" then  .values[2].value=\"${engagement}\" | .values[3].value=\"${src}\"  else \"Some error\" end' postman/DefectDojo.postman_environment.json > postman/${type}.DefectDojo.postman_environment.json"
+		sh ("docker run --rm -v `pwd`:/dvwa-spring postman/newman_ubuntu1404 run /dvwa-spring/postman/DefectDojo.postman_collection.json -e /dvwa-spring/postman/${type}.DefectDojo.postman_environment.json -k")
 	}
 	stage('Spotbugs Publish to dojo'){
 		def engagement = "/api/v1/engagements/1/"
-		def type = "spotbugs"
+		def type = "arachni"
 		def src = "/dvwa-spring/reports/arachni-report.json"
-		sh "jq -r '.values[2].value=\"${engagement}\"' postman/DefectDojo.postman_environment.json > postman/${type}.DefectDojo.postman_collection.json"
-		sh "jq -r '.item[0].item[0].request.body.formdata[5].src=\"${src}\"' postman/DefectDojo.postman_collection.json > postman/${type}.DefectDojo.postman_collection.json"
-		sh ("docker run --rm -v `pwd`:/dvwa-spring postman/newman_ubuntu1404 run /dvwa-spring/postman/${type}.DefectDojo.postman_collection.json -e /dvwa-spring/postman/DefectDojo.postman_environment.json -k")
+    sh "jq 'if .values[2].key == \"engagements_path\" then  .values[2].value=\"${engagement}\" | .values[3].value=\"${src}\"  else \"Some error\" end' postman/DefectDojo.postman_environment.json > postman/${type}.DefectDojo.postman_environment.json"
+		sh ("docker run --rm -v `pwd`:/dvwa-spring postman/newman_ubuntu1404 run /dvwa-spring/postman/DefectDojo.postman_collection.json -e /dvwa-spring/postman/${type}.DefectDojo.postman_environment.json -k")
 	}
 }
