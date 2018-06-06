@@ -17,9 +17,19 @@ public class UserInfo {
 
     @Id
     private Integer id;
+    private String level;
+    private String name;
     private String username;
     private String email;
     private String bankBalance;
     private String adminNote;
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public String getLevel() {
+        return level;
+    }
 
 }

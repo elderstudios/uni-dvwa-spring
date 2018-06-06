@@ -1,0 +1,287 @@
+html,
+body {
+    height: 100%;
+}
+#page-heading .options{
+    right: 0;
+    /*width: 230px;*/
+}
+#filterdate{
+    width: 190px;
+}
+.tiles-body-alt .not-set{
+    color: #FFFFFF;
+    font-style: italic;
+    font-size: 18px;
+}
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+#ui-datepicker-div{
+    z-index: 100!important;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+.daterangepicker{
+    left: 615px!important;
+    left: auto!important;
+    right: 20px!important;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+.android-phone{
+    position: relative;
+    display: block;
+    background: transparent;
+    background: url(../img/bg-android.png) no-repeat;
+    background-position:top left;
+    text-align: center;
+}
+.panel{
+    border-color:transparent;
+}
+#filter{
+    width: 260px;
+    padding: 10px 0;
+}
+.filterdate{
+    background: #edeef0;
+}
+.border-right-none{
+    border-right: none;
+}
+.border-left-none{
+    border-left: none;
+}
+.border-left-none:focus{
+    border: 1px solid #d2d3d6;
+    border-left: none;
+}
+#user-device td,#user-device th{
+    text-align: center;
+}
+#user-device td{
+    text-transform: uppercase;
+}
+#billing-payment{
+    text-align: center;
+    margin: 40px 0;
+}
+#account-billing .price{
+    font-size: 30px;
+}
+.box{
+    border: 1px solid #c8c9cb;
+    padding: 10px;
+    margin: 10px
+}
+.box .recenter{
+    padding: 15px 8px;
+}
+.price .caption{
+    font-size: 12px;
+}
+.box .center-one{
+    padding: 10px 0;
+}
+.table-report-product table{
+
+}
+span.legend{ 
+    padding: 3px 11px;
+    margin-right: 10px;
+    -moz-border-radius: 20%;
+    -webkit-border-radius: 20%;
+    -o-border-radius: 20%;
+    border-radius: 20%;
+}
+
+#register-tm{
+    color: #a3a3a3;
+}
+
+#register-tm .container{
+    width: 600px;
+    background: #FFF;
+}
+#register-tm .wrapper{
+    padding: 0 20px;
+}
+#register-tm .logo-pos{
+    text-align: center;
+    padding: 30px 0 20px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+#register-tm .step-meter{
+    text-align: center;
+    padding: 10px 0 20px;
+}
+#register-tm h3{
+    color: #f4792c;
+}
+#register-tm p.margin-buttom{
+    margin-bottom: 20px;
+}
+#register-tm .form-field{
+    margin: 40px 0;
+}
+#register-tm #paymentform-type{
+    width: 100%;
+    padding: 10px;
+}
+.footerbutton{
+    border-top: 1px solid #e3e3e3;
+
+}
+.line-top{
+    border-top: 1px solid #e3e3e3;
+    padding-top: 25px;
+}
+.btn-big-orange, .btn-big-orange:hover{
+    width: 100%;
+    padding: 5px 0;
+    background: #e97123;
+    color: #FFF;
+    font-size: 22px;
+    margin: 25px 0 50px;
+    font-weight: normal;
+}
+p.center{
+    text-align: center;
+}
+.box-grey{
+    background: #f2f2f4;
+    padding: 30px 0;
+}
+
+.center-light{
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+}
+
+img.maybank2u{
+    text-align: center;
+    padding: 20px 0 15px;
+}
+img.appstore{
+    margin: 10px 0 40px;
+}
+@media (max-width: 480px) {
+    #page-heading .options {
+        right: -5px;
+        width: 100%;
+        top: -15px;
+    }
+    #filterdate{
+        width: 98%;
+    }
+    #filter{
+        width: 100%;
+    }
+}
+.progress {
+    height: 35px;
+}
+.progress-bar{
+    padding: 6px;
+    font-size: 20px;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}

@@ -1,36 +1,54 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Super Insecure Website!</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.css"></link>
-</head>
-<body>
-<div class="row">
-    <div class="medium-12 columns">
-        <div class="blog-post">
-            <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-            <form th:action="@{/logout}" method="post">
-                <input class="button" type="submit" value="Sign Out"/>
-            </form>
-            <h3>Awesome Secure Website!</h3>
-            <p>02/03/2017</p>
-            <img class="thumbnail"
-                 src="https://static.spiceworks.com/shared/post/0003/6524/IMG_ThePush_2014-0505_SecureAllTheThings.jpg"></img>
-
-            <p>Super secret blog post about secure web applications!</p>
-
-            <div class="callout">
-                <ul class="menu simple">
-                    <li><a href="/admin/user/view">Not so hidden secure admin link</a></li>
-                </ul>
+<html lang="en">
+    <head>
+        <!--/*/<th:block th:include="fragments/header :: head"/>/*/-->
+    </head>
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+        <div class="page-wrapper">
+            <div class="page-header navbar navbar-fixed-top">
+                <!--/*/<th:block th:include="fragments/header :: header"/>/*/-->
+            </div>
+            <div class="clearfix"> </div>
+            <div class="page-container">
+                <div class="page-sidebar-wrapper">
+                    <!--/*/<th:block th:include="fragments/header :: menu"/>/*/-->
+                </div>
+                <div class="page-content-wrapper">
+                    <div class="page-content">
+                        <div class="page-bar">
+                            <ul class="page-breadcrumb">
+                                <li>
+                                    <a href="#">Home</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <a href="#">Users</a>
+                                </li>
+                                
+                            </ul>
+                            <div class="page-toolbar">
+                                <!--/*/<th:block th:include="fragments/header :: search"/>/*/-->
+                            </div>
+                        </div>
+                        <div class="coo-md-12" style="text-align: center;">
+                            <h1 th:inline="text">WELCOME Back [[${#httpServletRequest.remoteUser}]] 
+                                <br/>
+                                your ID is [[${#httpServletRequest.remoteName}]]
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-footer">
+                <div class="page-footer-inner"> 2016 &copy; Metronic Theme By</div>
+                <div class="scroll-to-top">
+                    <i class="icon-arrow-up"></i>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
-<script>
-    $(document).foundation();
-</script>
-</body>
+        <script type="text/javascript" th:src="@{/public/plugins/js/jquery.min.js}" />
+        <script type="text/javascript" th:src="@{/public/plugins/bootstrap/js/bootstrap.min.js}" />
+        <script type="text/javascript" th:src="@{/public/plugins/js/app.min.js}" />
+        <script type="text/javascript" th:src="@{/public/layout/scripts/layout.min.js}" />
+    </body>
 </html>

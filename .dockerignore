@@ -1,0 +1,10 @@
+# exclude all
+*
+
+# include some
+! target/www-0.0.1-SNAPSHOT.jar
+! spotbugs-customExcludeFilter.xml
+! reports
+! postman
+! spotbugs
+! dependency-check

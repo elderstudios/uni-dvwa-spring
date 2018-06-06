@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "9c437c40-316e-483e-9e7c-552b48447e38",
+		"name": "DefectDojo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "engagements",
+			"description": null,
+			"item": [
+				{
+					"name": "import scan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{api_key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "User-Agent",
+								"value": "python-requests/2.18.4"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "scan_date",
+									"value": "2018-05-31",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "engagement",
+									"value": "{{engagements_path}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "scan_type",
+									"value": "{{scan_type}}",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "minimum_severity",
+									"value": "Info",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "active",
+									"value": "true",
+									"type": "text",
+									"description": ""
+								},
+								{
+									"key": "file",
+									"description": "",
+									"type": "file",
+									"src": "{{file_src_path}}"
+								}
+							]
+						},
+						"url": "{{url}}/api/v1/importscan/"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--/*/<th:block th:include="fragments/header :: head"/>/*/-->
+    </head>
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+        <div class="page-wrapper">
+            <div class="page-header navbar navbar-fixed-top">
+                <!--/*/<th:block th:include="fragments/header :: header"/>/*/-->
+            </div>
+            <div class="clearfix"> </div>
+            <div class="page-container">
+                <div class="page-sidebar-wrapper">
+                    <!--/*/<th:block th:include="fragments/header :: menu"/>/*/-->
+                </div>
+                <div class="page-content-wrapper">
+                    <div class="page-content">
+                        <div class="page-bar">
+                            <ul class="page-breadcrumb">
+                                <li>
+                                    <a href="#">Home</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <a href="#">Users</a>
+                                </li>
+                                
+                            </ul>
+                            <div class="page-toolbar">
+                                <!--/*/<th:block th:include="fragments/header :: search"/>/*/-->
+                            </div>
+                        </div>
+                        <div class="coo-md-12" style="text-align: center;">
+                            <h1 th:inline="text">sorry you can't access this page</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-footer">
+                <div class="page-footer-inner"> 2016 &copy; Metronic Theme By</div>
+                <div class="scroll-to-top">
+                    <i class="icon-arrow-up"></i>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" th:src="@{/public/plugins/js/jquery.min.js}" />
+        <script type="text/javascript" th:src="@{/public/plugins/bootstrap/js/bootstrap.min.js}" />
+        <script type="text/javascript" th:src="@{/public/plugins/js/app.min.js}" />
+        <script type="text/javascript" th:src="@{/public/layout/scripts/layout.min.js}" />
+    </body>
+</html>
