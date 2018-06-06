@@ -10,21 +10,6 @@
 			"description": null,
 			"item": [
 				{
-					"name": "Get List",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{api_key}}"
-							}
-						],
-						"body": {},
-						"url": "{{url}}/api/v1/engagements"
-					},
-					"response": []
-				},
-				{
 					"name": "import scan",
 					"request": {
 						"method": "POST",
