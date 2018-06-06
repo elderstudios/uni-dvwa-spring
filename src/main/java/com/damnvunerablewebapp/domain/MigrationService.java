@@ -21,7 +21,10 @@ public class MigrationService {
 
     @PostConstruct
     private void init(){
-        userInfoRepository.save(new UserInfo().setId(1).setEmail("huddersfield@elder.co.uk").setUsername("huddersfield").setBankBalance("£1000.00").setAdminNote("Really bad coder. Don't trust with security."));
-        userInfoRepository.save(new UserInfo().setId(2).setEmail("admin@elder.co.uk").setUsername("admin").setBankBalance("£9001.00").setAdminNote("I'm the best."));
+        userInfoRepository.save(new UserInfo().setId(3).setLevel("User").setName("Carmun").setEmail("carmun@users.com").setUsername("user1").setBankBalance("£1001.00").setAdminNote("Really bad coder. Don't trust with security."));
+        userInfoRepository.save(new UserInfo().setId(4).setLevel("User").setName("David").setEmail("david@users.com").setUsername("user2").setBankBalance("£1002.00").setAdminNote("Really bad coder 2."));
+        userInfoRepository.save(new UserInfo().setId(5).setLevel("User").setName("Nicole").setEmail("nicole@users.com").setUsername("user3").setBankBalance("£1003.00").setAdminNote("Really bad coder 3."));
+        userInfoRepository.save(new UserInfo().setId(1).setLevel("Administrator").setName("Jhon").setEmail("jhon@myadmin.com").setUsername("admin1").setBankBalance("£9001.00").setAdminNote("I'm the best 1."));
+        userInfoRepository.save(new UserInfo().setId(2).setLevel("Administrator").setName("Evelin").setEmail("evelin@myadmin.com").setUsername("admin2").setBankBalance("£9002.00").setAdminNote("I'm the best 2."));
     }
 }
