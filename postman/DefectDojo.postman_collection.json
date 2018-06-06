@@ -64,7 +64,7 @@
 									"key": "file",
 									"description": "",
 									"type": "file",
-									"src": "/home/resources/aracni-report.json"
+									"src": "{{file_src_path}}"
 								}
 							]
 						},
